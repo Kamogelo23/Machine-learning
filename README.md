@@ -12,7 +12,7 @@ Hyperparameter Tuning: Determine the best hyperparameters for SVM, Classificatio
 Model Evaluation: Find out which method performs best using test data.
 Libraries and Dependencies
 pip install numpy pandas seaborn requests
-Libraries Used
+### Libraries Used
 pandas: For data manipulation and analysis.
 numpy: Supports large, multi-dimensional arrays and matrices.
 matplotlib: Provides a MATLAB-like plotting framework.
@@ -24,16 +24,15 @@ Data is loaded from provided URLs using the requests library and then read into 
 import requests
 import io
 import pandas as pd
-
+### Load the data frame
 URL1 = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/dataset_part_2.csv"
 resp1 = requests.get(URL1)
 df1 = pd.read_csv(io.StringIO(resp1.text))
-Save to grepper
 Model Training and Evaluation
 Multiple models including Logistic Regression, SVM, Decision Trees, and KNN are trained using GridSearchCV for hyperparameter tuning. The models are then evaluated on test data to determine their accuracy and other metrics.
 
-Confusion Matrix
+#### Confusion Matrix
 A custom function plot_confusion_matrix is used to visualize the confusion matrix for each model, helping in understanding the model's performance in terms of false positives, false negatives, etc.
 
-Results
+### Results
 After training and evaluating all models, the K-Nearest Neighbors (KNN) model was found to be the optimal model for this dataset.
